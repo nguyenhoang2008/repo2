@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: ['$$', '$$'], ['\\[', '\\]']
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - Trắc Nghiệm Offline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loadingScreen" class="page active" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div style="text-align: center;">
+            <div class="main-title" style="font-size: 2rem;">🧠 TitZiy Loading...</div>
+            <p style="color: var(--text-secondary);">Đang tải cấu hình và dữ liệu bài thi...</p>
+        </div>
+    </div>
+    
+    <div id="page1" class="page" style="display: none;">
+        <div class="container">
+            <div class="card info-section">
+                <div class="main-title">🌟 Bắt Đầu Trắc Nghiệm!</div>
+                <div class="info-content">
+                    <p>• Website được tạo ra cho tập thể lớp 11A1!</p>
+                    <p>• Dữ liệu câu hỏi được lưu cục bộ trên thiết bị của bạn.</p>
+                </div>
+            </div>
+
+            <div class="card user-settings-section">
+                <div class="input-group">
+                    <label for="userNameInput">✍️ Nhập Tên Của Bạn:</label>
+                    <input type="text" id="userNameInput" placeholder="Ví dụ: Quang Nguyễn" value="">
+                </div>
+                
+                <div class="subject-list-container">
+                    <h3>📚 Chọn Môn Học</h3>
+                    <div id="subjectList">
+                        </div>
+                </div>
+
+                <div class="settings-controls">
+                    <label>
+                        <input type="checkbox" id="shuffleAnswers">
+                        🔀 Xáo Trộn Đáp Án (A, B, C, D)
+                    </label>
+                    <button id="startQuizBtn" class="btn btn-primary btn-icon">
+                        🚀 BẮT ĐẦU THI
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page2" class="page" style="display: none;">
+        <div class="header-quiz">
+            <div class="container">
+                <div class="quiz-header-content">
+                    <div class="quiz-info">
+                        <h4 id="quizTitle"></h4>
+                        <p>Thí sinh: <span id="currentUserName"></span></p>
+                    </div>
+                    <div class="quiz-status">
+                        <p>Câu hỏi: <span id="currentQuestionNumber"></span> / <span id="totalQuestions"></span></p>
+                    </div>
+                </div>
+                <div id="progressBar">
+                    <div id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="card question-card">
+                <div id="questionSection" class="question-section">
+                    <div id="questionText" class="question-text">
+                        </div>
+                    
+                    <div id="optionsContainer" style="display: block;">
+                        </div>
+                    
+                    <div id="shortAnswerContainer" class="short-answer-group" style="display: none;">
+                        <input type="text" id="shortAnswerInput" placeholder="Nhập câu trả lời của bạn">
+                    </div>
+
+                    <div id="trueFalseContainer" class="true-false-set-group" style="display: none;">
+                        </div>
+                </div>
+            </div>
+            
+            <div class="quiz-navigation">
+                <button id="prevBtn" class="btn btn-secondary btn-icon" disabled>
+                    ⏮️ Câu Trước
+                </button>
+                <button id="nextBtn" class="btn btn-primary btn-icon">
+                    Câu Tiếp Theo ⏭️
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="page3" class="page" style="display: none;">
+        <div class="container">
+            <div class="card result-card">
+                <div class="result-header">
+                    <h2>📊 KẾT QUẢ BÀI THI</h2>
+                    <p>Điểm số:</p>
+                    <div id="finalScore" class="score-text"></div>
+                </div>
+                
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span>Tổng số câu hỏi:</span>
+                        <span id="totalQsStat" class="stat-value total"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Số câu trả lời đúng:</span>
+                        <span id="correctQsStat" class="stat-value correct"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Số câu trả lời sai:</span>
+                        <span id="wrongQsStat" class="stat-value wrong"></span>
+                    </div>
+                </div>
+                
+                <div class="result-actions">
+                    <button class="btn btn-secondary btn-icon" onclick="restartQuiz()">
+                        🔄 LÀM LẠI BÀI NÀY
+                    </button>
+                    <button class="btn btn-primary btn-icon" onclick="newQuiz()">
+                        📝 BÀI KIỂM TRA MỚI
+                    </button>
+                </div>
+                
+                <div id="resultDetails">
+                    <h3>🔍 Chi Tiết Kết Quả</h3>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="questionDetailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Chi Tiết Câu Hỏi <span id="detailQuestionIndex"></span></h3>
+                <span class="close-btn" onclick="closeModal('questionDetailModal')">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <div id="detailQuestionText" class="detail-question-text"></div>
+                
+                <div class="detail-options-mc">
+                    <div class="detail-option" data-option="A">
+                        <span class="option-letter">A.</span>
+                        <span id="detailOptionA" class="option-text"></span>
+                    </div>
+                    <div class="detail-option" data-option="B">
+                        <span class="option-letter">B.</span>
+                        <span id="detailOptionB" class="option-text"></span>
+                    </div>
+                    <div class="detail-option" data-option="C">
+                        <span class="option-letter">C.</span>
+                        <span id="detailOptionC" class="option-text"></span>
+                    </div>
+                    <div class="detail-option" data-option="D">
+                        <span class="option-letter">D.</span>
+                        <span id="detailOptionD" class="option-text"></span>
+                    </div>
+                </div>
+                
+                <div class="detail-short-answer" style="display: none;">
+                    </div>
+                
+                <div class="detail-true-false" style="display: none;">
+                    </div>
+                
+                <div class="detail-result">
+                    <div class="result-info">
+                        <div class="user-choice">
+                            <span>Đáp án bạn chọn: </span>
+                            <span id="detailUserChoice" class="choice-value"></span>
+                        </div>
+                        <div class="correct-answer">
+                            <span>Đáp án đúng: </span>
+                            <span id="detailCorrectAnswer" class="answer-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="subjectSettingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="settingsModalTitle">Cài đặt Môn học</h3>
+                <span class="close-btn" onclick="closeModal('subjectSettingsModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="settings-controls">
+                    <label>
+                        <input type="checkbox" id="shuffleQuestionsSetting">
+                        🔀 Xáo Trộn Thứ Tự Câu Hỏi
+                    </label>
+                </div>
+                
+                <h4>📝 Chọn Dạng Câu Hỏi</h4>
+                <div class="question-type-section">
+                    <div class="type-header">
+                        <h4>⭐ Câu hỏi Trắc nghiệm</h4>
+                        <button class="btn-small" onclick="toggleAllMultipleChoice()">
+                            Chọn/bỏ tất cả
+                        </button>
+                    </div>
+                    <div id="multipleChoiceList" class="question-list">
+                        </div>
+                </div>
+                
+                <div class="question-type-section">
+                    <div class="type-header">
+                        <h4>📝 Câu hỏi trả lời ngắn</h4>
+                        <button class="btn-small" onclick="toggleAllShortAnswer()">
+                            Chọn/bỏ tất cả
+                        </button>
+                    </div>
+                    <div id="shortAnswerList" class="question-list">
+                        </div>
+                </div>
+                
+                <div class="question-type-section">
+                    <div class="type-header">
+                        <h4>🔵 Câu hỏi Đúng/Sai</h4>
+                        <button class="btn-small" onclick="toggleAllTrueFalse()">
+                            Chọn/bỏ tất cả
+                        </button>
+                    </div>
+                    <div id="trueFalseList" class="question-list">
+                        </div>
+                </div>
+                
+                <div class="settings-actions" style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button class="btn btn-secondary" onclick="closeSubjectSettings()">
+                        Hủy
+                    </button>
+                    <button class="btn btn-primary" onclick="saveSubjectSettings()">
+                        💾 Lưu cài đặt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

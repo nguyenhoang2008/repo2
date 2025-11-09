@@ -1,0 +1,156 @@
+{
+    "Mon": "Toán Học Lớp 11",
+    "QA": [
+        {
+            "id": "math_1",
+            "Q": "Giải phương trình: $x^2 - 5x + 6 = 0$",
+            "A": "$x = 1, x = 6$",
+            "B": "$x = 2, x = 3$",
+            "C": "$x = -2, x = -3$",
+            "D": "$x = 0, x = 5$",
+            "True": "B"
+        },
+        {
+            "id": "math_2",
+            "Q": "Tính đạo hàm của hàm số $f(x) = 3x^2 + 2x - 1$",
+            "A": "$f'(x) = 6x + 2$",
+            "B": "$f'(x) = 3x + 2$",
+            "C": "$f'(x) = 6x + 1$",
+            "D": "$f'(x) = 3x^2 + 2$",
+            "True": "A"
+        },
+        {
+            "id": "math_3",
+            "type": "short_answer",
+            "Q": "Tìm giá trị nhỏ nhất của hàm số $y = x^2 - 4x + 5$",
+            "correctAnswer": "1"
+        },
+        {
+            "id": "math_4",
+            "Q": "Cho hình chóp S.ABCD có đáy là hình vuông. Khẳng định nào sau đây đúng?",
+            "A": "SA vuông góc với mặt phẳng (ABCD)",
+            "B": "SC vuông góc với mặt phẳng (ABCD)",
+            "C": "SB vuông góc với mặt phẳng (ABCD)",
+            "D": "SD vuông góc với mặt phẳng (ABCD)",
+            "True": "A"
+        },
+        {
+            "id": "math_5",
+            "type": "true_false_set",
+            "Q": "Xét tính đúng sai của các khẳng định sau về hàm số lượng giác:",
+            "questions": [
+                {
+                    "text": "Hàm số $y = \\sin x$ là hàm số lẻ",
+                    "correct": true
+                },
+                {
+                    "text": "Hàm số $y = \\cos x$ là hàm số chẵn",
+                    "correct": true
+                },
+                {
+                    "text": "Hàm số $y = \\tan x$ có tập xác định là $\\mathbb{R}$",
+                    "correct": false
+                },
+                {
+                    "text": "Hàm số $y = \\cot x$ tuần hoàn với chu kỳ $\\pi$",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "math_6",
+            "Q": "Tính giới hạn: $\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$",
+            "A": "0",
+            "B": "2",
+            "C": "4",
+            "D": "Không tồn tại",
+            "True": "C"
+        },
+        {
+            "id": "math_7",
+            "type": "short_answer",
+            "Q": "Tìm số hạng tổng quát của cấp số cộng có $u_1 = 3$ và công sai $d = 2$",
+            "correctAnswer": "u_n = 2n + 1"
+        },
+        {
+            "id": "math_8",
+            "Q": "Cho tam giác ABC vuông tại A, AB = 3cm, AC = 4cm. Độ dài cạnh BC là:",
+            "A": "5cm",
+            "B": "6cm",
+            "C": "7cm",
+            "D": "8cm",
+            "True": "A"
+        },
+        {
+            "id": "math_9",
+            "Q": "Phương trình $\\sin x = \\frac{1}{2}$ có nghiệm là:",
+            "A": "$x = \\frac{\\pi}{6} + k2\\pi$",
+            "B": "$x = \\frac{\\pi}{6} + k2\\pi$ hoặc $x = \\frac{5\\pi}{6} + k2\\pi$",
+            "C": "$x = \\frac{\\pi}{3} + k2\\pi$",
+            "D": "$x = \\frac{\\pi}{3} + k2\\pi$ hoặc $x = \\frac{2\\pi}{3} + k2\\pi$",
+            "True": "B"
+        },
+        {
+            "id": "math_10",
+            "type": "true_false_set",
+            "Q": "Xét tính đúng sai của các khẳng định về xác suất:",
+            "questions": [
+                {
+                    "text": "Xác suất của một biến cố luôn nằm trong khoảng [0, 1]",
+                    "correct": true
+                },
+                {
+                    "text": "Tổng xác suất của tất cả các biến cố sơ cấp bằng 2",
+                    "correct": false
+                },
+                {
+                    "text": "Xác suất của biến cố chắc chắn bằng 1",
+                    "correct": true
+                },
+                {
+                    "text": "Hai biến cố đối nhau có xác suất bằng nhau",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": "math_11",
+            "Q": "Tìm tập xác định của hàm số $y = \\sqrt{x - 2}$",
+            "A": "$[2, +\\infty)$",
+            "B": "$(2, +\\infty)$",
+            "C": "$(-\\infty, 2]$",
+            "D": "$(-\\infty, 2)$",
+            "True": "A"
+        },
+        {
+            "id": "math_12",
+            "type": "short_answer",
+            "Q": "Tính tích phân: $\\int_0^1 (2x + 1) dx$",
+            "correctAnswer": "2"
+        },
+        {
+            "id": "math_13",
+            "Q": "Cho hình lập phương ABCD.A'B'C'D'. Góc giữa hai đường thẳng AB và A'D' bằng:",
+            "A": "30°",
+            "B": "45°",
+            "C": "60°",
+            "D": "90°",
+            "True": "D"
+        },
+        {
+            "id": "math_14",
+            "Q": "Nghiệm của bất phương trình $2x - 3 > 7$ là:",
+            "A": "$x > 2$",
+            "B": "$x > 5$",
+            "C": "$x < 5$",
+            "D": "$x < 2$",
+            "True": "B"
+        },
+        {
+            "id": "math_15",
+            "type": "short_answer",
+            "Q": "Tìm số nghiệm của phương trình $\\cos 2x = \\frac{1}{2}$ trên đoạn $[0, 2\\pi]$",
+            "correctAnswer": "4"
+        }
+    ]
+}

@@ -1,0 +1,235 @@
+{
+    "Mon": "Kiến Thức Tổng Hợp",
+    "QA": [
+        {
+            "id": "tf_1",
+            "type": "true_false_set",
+            "Q": "Xác định tính đúng/sai của các khẳng định sau về khoa học:",
+            "questions": [
+                {
+                    "text": "Trái Đất quay quanh Mặt Trời",
+                    "correct": true
+                },
+                {
+                    "text": "Nước sôi ở 100°C ở mọi nơi trên Trái Đất",
+                    "correct": false
+                },
+                {
+                    "text": "Con người chỉ sử dụng 10% bộ não",
+                    "correct": false
+                },
+                {
+                    "text": "Chu kỳ Mặt Trăng là 29.5 ngày",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_2",
+            "type": "true_false_set",
+            "Q": "Các khẳng định về lịch sử Việt Nam:",
+            "questions": [
+                {
+                    "text": "Vua Quang Trung có tên thật là Nguyễn Huệ",
+                    "correct": true
+                },
+                {
+                    "text": "Chiến thắng Điện Biên Phủ năm 1954",
+                    "correct": true
+                },
+                {
+                    "text": "Hà Nội là thủ đô từ thời nhà Nguyễn",
+                    "correct": false
+                },
+                {
+                    "text": "Chữ Quốc ngữ do Alexandre de Rhodes sáng tạo",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_3",
+            "type": "true_false_set",
+            "Q": "Kiến thức địa lý thế giới:",
+            "questions": [
+                {
+                    "text": "Nga là quốc gia có diện tích lớn nhất thế giới",
+                    "correct": true
+                },
+                {
+                    "text": "Amazon là con sông dài nhất thế giới",
+                    "correct": false
+                },
+                {
+                    "text": "Thái Bình Dương là đại dương lớn nhất",
+                    "correct": true
+                },
+                {
+                    "text": "Phần Lan được gọi là 'đất nước mặt trời mọc'",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": "tf_4",
+            "type": "true_false_set",
+            "Q": "Các sự thật về sinh học:",
+            "questions": [
+                {
+                    "text": "Cá voi là loài cá",
+                    "correct": false
+                },
+                {
+                    "text": "Loài người thuộc lớp Thú",
+                    "correct": true
+                },
+                {
+                    "text": "Cây xanh quang hợp vào ban đêm",
+                    "correct": false
+                },
+                {
+                    "text": "DNA là vật chất di truyền",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_5",
+            "type": "true_false_set",
+            "Q": "Kiến thức vật lý cơ bản:",
+            "questions": [
+                {
+                    "text": "Âm thanh truyền nhanh hơn trong nước so với không khí",
+                    "correct": true
+                },
+                {
+                    "text": "Ánh sáng có thể truyền trong chân không",
+                    "correct": true
+                },
+                {
+                    "text": "Nước dẫn điện tốt",
+                    "correct": false
+                },
+                {
+                    "text": "Trọng lực trên Mặt Trăng bằng 1/6 Trái Đất",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_6",
+            "type": "true_false_set",
+            "Q": "Các khẳng định về công nghệ:",
+            "questions": [
+                {
+                    "text": "HTML là ngôn ngữ lập trình",
+                    "correct": false
+                },
+                {
+                    "text": "Bitcoin sử dụng công nghệ blockchain",
+                    "correct": true
+                },
+                {
+                    "text": "RAM là bộ nhớ vĩnh viễn",
+                    "correct": false
+                },
+                {
+                    "text": "AI là viết tắt của Artificial Intelligence",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_7",
+            "type": "true_false_set",
+            "Q": "Kiến thức văn học Việt Nam:",
+            "questions": [
+                {
+                    "text": "'Truyện Kiều' do Nguyễn Du sáng tác",
+                    "correct": true
+                },
+                {
+                    "text": "Hồ Xuân Hương là nhà thơ nữ nổi tiếng thời Lê",
+                    "correct": true
+                },
+                {
+                    "text": "'Chí Phèo' là tác phẩm của Nam Cao",
+                    "correct": true
+                },
+                {
+                    "text": "Thơ mới xuất hiện từ thế kỷ 18",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": "tf_8",
+            "type": "true_false_set",
+            "Q": "Các sự thật về thể thao:",
+            "questions": [
+                {
+                    "text": "World Cup tổ chức 4 năm một lần",
+                    "correct": true
+                },
+                {
+                    "text": "Bóng rổ có 5 cầu thủ mỗi đội trên sân",
+                    "correct": true
+                },
+                {
+                    "text": "Olympic mùa hè và mùa đông cùng năm tổ chức",
+                    "correct": false
+                },
+                {
+                    "text": "Usain Bolt là vận động viên điền kinh Jamaica",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_9",
+            "type": "true_false_set",
+            "Q": "Kiến thức âm nhạc và nghệ thuật:",
+            "questions": [
+                {
+                    "text": "Mozart là nhà soạn nhạc người Áo",
+                    "correct": true
+                },
+                {
+                    "text": "Piano có 88 phím",
+                    "correct": true
+                },
+                {
+                    "text": "Mona Lisa được vẽ bởi Van Gogh",
+                    "correct": false
+                },
+                {
+                    "text": "Nhạc cụ guitar có 6 dây",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": "tf_10",
+            "type": "true_false_set",
+            "Q": "Các khẳng định về sức khỏe:",
+            "questions": [
+                {
+                    "text": "Vitamin D có thể tổng hợp từ ánh nắng mặt trời",
+                    "correct": true
+                },
+                {
+                    "text": "Người trưởng thành cần ngủ 4-5 tiếng mỗi đêm",
+                    "correct": false
+                },
+                {
+                    "text": "Uống đủ nước tốt cho sức khỏe",
+                    "correct": true
+                },
+                {
+                    "text": "Hút thuốc lá có lợi cho phổi",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}
